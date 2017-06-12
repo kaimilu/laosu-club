@@ -1,3 +1,8 @@
+/**
+ * 类
+ * 
+ * @class blogpack
+ */
 class blogpack {
   constructor(options) {
     this.config = options.config || {}

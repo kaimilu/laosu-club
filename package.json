@@ -5,9 +5,10 @@
   "author": "suzhihui <wisdom.su@163.com>",
   "private": true,
   "scripts": {
+    "build": "node build/build.js",
     "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
-    "build": "node build/build.js"
+    "server": "node server/entry.js",
+    "start": "node build/dev-server.js"
   },
   "dependencies": {
     "vue": "^2.3.3",
@@ -38,6 +39,7 @@
     "jsonwebtoken": "^7.1.9",
     "koa": "^2.2.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-ratelimit": "^4.0.0",
     "koa-router": "^7.2.0",
     "log4js": "^0.6.38",
     "mongoose": "^4.5.9",

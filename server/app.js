@@ -1,9 +1,8 @@
-console.log('====================== come app.js =================')
 global.Promise = require('bluebird')
 
 const log = require('./utils/log')
 const Koa = require('koa')
-const KoaRouter = require('koa-router')
+const koaRouter = require('koa-router')
 const mongoRest = require('./mongoRest')
 const models = require('./model/mongo')
 const redis = require('./model/redis')

@@ -1,5 +1,5 @@
 const env = process.env
-
+console.log('come mongo connect')
 module.exports = {
   serverPort: env.serverPort || 3000,
   mongoDatabase: env.mongoDatabase || 'blog',

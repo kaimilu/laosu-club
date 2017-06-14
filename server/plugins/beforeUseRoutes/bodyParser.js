@@ -1,7 +1,6 @@
 const bodyParser = require('koa-bodyparser')
-
 module.exports = class {
-  async beforeUserRoutes({
+  async beforeUseRoutes({
     app
   }) {
     app.use(bodyParser())

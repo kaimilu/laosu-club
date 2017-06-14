@@ -4,8 +4,8 @@ const serverStartPrefix = '../plugins/beforeServerStart'
 const env = process.env
 
 const config = Object.assign({}, base)
-
 const BodyParserPlugin = require(`${userRoutesPrefix}/bodyParser`)
+
 const LogTimePlugin = require(`${userRoutesPrefix}/logTime`)
 const RestcPlugin = require(`${userRoutesPrefix}/restc`)
 

@@ -1,12 +1,7 @@
-/**
- * 类
- * 
- * @class blogpack
- */
 class blogpack {
   constructor(options) {
     this.config = options.config || {}
-    this.plugins = options.plugins || {}
+    this.plugins = options.plugins || []
     this.models = options.models
     this.redis = options.redis
   }
@@ -27,6 +22,7 @@ class blogpack {
         needAfterRoutes: routeObj.needAfterRoutes || false
       }))
     }
+    return result
   }
 
   getBeforeRestfulRoutes() {
@@ -46,6 +42,6 @@ class blogpack {
       .filter(plugin => plugin['beforeServerStart'])
       .map(plugin => plugin['beforeServerStart'])
   }
-
 }
+
 module.exports = blogpack

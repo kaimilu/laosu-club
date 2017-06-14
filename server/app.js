@@ -10,13 +10,13 @@ const config = require('./conf/config')
 
 const configName = process.env.NODE_ENV === '"development"' ? 'dev' : 'prod'
 const blogpackConfig = require(`./build/blogpack.${configName}.config`)
-blogpackConfig.models = models;
+blogpackConfig.models = models
 blogpackConfig.redis = redis
 const Blogpack = require('./blogpack')
 const lifecycle = global.lifecycle = new Blogpack(blogpackConfig)
 
 const app = new Koa()
-const router = KoaRouter()
+const router = koaRouter()
 
 module.exports = (async() => {
   try {
@@ -35,7 +35,7 @@ module.exports = (async() => {
 
     for (const item of middlewareRoutes) {
       const middlewares = [...item.middleware]
-      item.needBeforeRoutes && 　middlewares.unshift(...beforeRestfulRoutes)
+      item.needBeforeRoutes && middlewares.unshift(...beforeRestfulRoutes)
       item.needAfterRoutes && middlewares.push(...afterRestfulRoutes)
       router[item.method](item.path, ...middlewares)
     }
@@ -55,9 +55,10 @@ module.exports = (async() => {
       await middleware()
     }
 
-    app.listen(`Koa2 is running at ${config.serverPort}`)
-
+    app.listen(config.serverPort, () => {
+      log.info(`Koa2 is running at ${config.serverPort}`)
+    })
   } catch (err) {
     log.error(err)
   }
-})
+})()

@@ -15,5 +15,5 @@ module.exports = {
   tokenExpiresIn: env.tokenExpiresIn || 3600,
 
   defaultAdminName: env.defaultAdminName || 'admin',
-  defaultAdminPassword: env.defaultAdminPassword || 'admin'
+  defaultAdminPassword: env.defaultAdminPassword || 'laosu'
 }

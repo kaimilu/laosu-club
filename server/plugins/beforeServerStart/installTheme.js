@@ -10,10 +10,10 @@ module.exports = class {
     let fileArr = fs.readdirSync(resolve(prefix))
     for (let i = 0, len = fileArr.length; i < len; i++) {
       let fileName = fileArr[i]
-      let theme = require(`${profix}/${fileName}`)
+      let theme = require(`${prefix}/${fileName}`)
       let count = await models.theme.find({
         name: theme.name
-      })
+      }).count().exec()
       if (count === 0) {
         await models.theme.create(theme)
         log.info(`theme ${theme.name} created`)

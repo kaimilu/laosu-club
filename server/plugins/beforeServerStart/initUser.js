@@ -2,9 +2,11 @@ const log = require('../../utils/log')
 const config = require('../../conf/config')
 const models = require('../../model/mongo')
 
-console.log('initUser=======================')
+
 module.exports = class {
   async beforeServerStart() {
+    console.log('initUser=======================')
+
     const count = await models.user.find().count().exec()
     console.log('initUser=======================')
     if (count !== 0) return

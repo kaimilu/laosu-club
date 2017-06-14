@@ -1,11 +1,13 @@
-import config from '../conf/config'
-import mongoose from 'mongoose'
-import log from '../utils/log'
+let config = require('../conf/config')
+let mongoose = require('mongoose')
+let log = require('../utils/log')
 
 // mongoose.Promise = Promise
 mongoose.Promise = require('bluebird')
 
 let mongoUrl = `${config.mongoHost}:${config.mongoPort}/${config.mongoDatabase}`
+
+mongoose.connect(mongoUrl)
 
 let db = mongoose.connection
 

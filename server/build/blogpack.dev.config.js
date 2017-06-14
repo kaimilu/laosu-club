@@ -9,9 +9,9 @@ const BodyParserPlugin = require(`${userRoutesPrefix}/bodyParser`)
 const LogTimePlugin = require(`${userRoutesPrefix}/logTime`)
 const RestcPlugin = require(`${userRoutesPrefix}/restc`)
 
-const InitOptionPlugin = require('${serverStartPrefix}/initOption')
-const InstallThemePlugin = require('${serverStartPrefix}/installTheme')
-const InitUserPlugin = require('${serverStartPrefix}/initUser')
+const InitOptionPlugin = require(`${serverStartPrefix}/initOption`)
+const InstallThemePlugin = require(`${serverStartPrefix}/installTheme`)
+const InitUserPlugin = require(`${serverStartPrefix}/initUser`)
 
 const CheckAuthPlugin = require('../plugins/beforeRestful/checkAuth')
 
